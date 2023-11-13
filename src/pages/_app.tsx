@@ -1,11 +1,25 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { App as KonastaApp } from 'konsta/react';
+import type { ReactElement, ReactNode } from 'react'
+import type { NextPage } from 'next'
+import Layout from '@/components/layout'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <KonastaApp theme="ios">
-      <Component {...pageProps} />
-    </KonastaApp>
-  )
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode
 }
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component?.getLayout || ((page) => <Layout>{ page}</Layout>)
+  return getLayout(<Component {...pageProps} />)
+  // return (
+  //   <Layout>
+  //     <Component {...pageProps} />
+  //   </Layout>
+  // )
+}
+
+ 

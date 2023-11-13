@@ -13,11 +13,9 @@ export default function Home() {
   return (
     <Page>
       <Navbar title="My App" />
-      <Block strong>
         <p>
           Here is your Next.js & Konsta UI app.  see what we have here.
         </p>
-      </Block>
       <BlockTitle>Navigation</BlockTitle>
       <List>
         <ListItem href="/about/" title="About" />
