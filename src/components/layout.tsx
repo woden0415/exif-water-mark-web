@@ -1,14 +1,22 @@
+import { useStoreState } from '@/store/index.hook'
+import store from '@/store/index.store'
+import { StoreProvider } from 'easy-peasy'
 import { App as KonastaApp } from 'konsta/react'
-import { PropsWithChildren, useState } from 'react'
+import { PropsWithChildren } from 'react'
 
-export default function Layout({ children }: PropsWithChildren<{}>) {
-  const [theme, setTheme] = useState<'ios' | 'material' | 'parent' | undefined>(
-    'ios'
-  )
+function KonastaContainer({ children }: PropsWithChildren<{}>) {
+  const theme = useStoreState(state => state.device.info.theme)
   return (
     <KonastaApp theme={theme}>
-      <div className="flex flex-col">{children}</div>
+      <div className="flex h-full flex-col">{children}</div>
     </KonastaApp>
+  )
+}
+export default function Layout({ children }: PropsWithChildren<{}>) {
+  return (
+    <StoreProvider store={store}>
+      <KonastaContainer>{children}</KonastaContainer>
+    </StoreProvider>
   )
 }
 

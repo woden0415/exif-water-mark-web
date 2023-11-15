@@ -1,31 +1,18 @@
-import {
-  Page,
-  Navbar,
-  Block,
-  Button,
-  List,
-  ListItem,
-  Link,
-  BlockTitle,
-} from 'konsta/react';
+import { List, ListItem, Navbar, Page } from 'konsta/react'
 
 export default function Home() {
   return (
     <Page>
-      <Navbar title="My App" />
-        <p>
-          Here is your Next.js & Konsta UI app.  see what we have here.
-        </p>
-      <BlockTitle>Navigation</BlockTitle>
+      <Navbar title="exif水印" />
       <List>
-        <ListItem href="/about/" title="About" />
-        <ListItem href="/form/" title="Form" />
+        <ListItem href="/splash/" title="闪屏页面" />
+        <ListItem href="/marker-index/" title="水印列表" />
+        <ListItem href="/marker-list/" title="水印列表" />
+        <ListItem href="/marker-detail/" title="水印详情" />
+        <ListItem href="/compile/" title="合成页面" />
+        <ListItem href="/personal-center/" title="个人中心" />
+        <ListItem href="/setting/" title="设置" />
       </List>
-
-      <Block strong className="flex space-x-4">
-        <Button>Button 1</Button>
-        <Button>Button 2</Button>
-      </Block>
     </Page>
-  );
+  )
 }
