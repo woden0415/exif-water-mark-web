@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["Konasta", "konsta"],
+  "cSpell.words": ["exif", "Konasta", "konsta"],
   // Formatting using Prettier by default for all languages
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
