@@ -1,14 +1,16 @@
 import { useStoreActions, useStoreState } from '@/store/index.hook'
-import { Button } from 'konsta/react'
 import { NextPageWithLayout } from '../_app'
 
 const MarkerIndex: NextPageWithLayout = () => {
   const user = useStoreState(state => state.user)
   const updateDevice = useStoreActions(action => action.device.updateDevice)
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <div className="flex flex-col items-center">首页</div>
-      <div>{user.info.name}</div>
+    <div className="block h-screen w-screen">
+      <div className="flex flex-row justify-between px-10 py-6">
+        <div className="text-2xl font-semibold">你好，摄影师！</div>
+        <div className="text-2xl font-semibold">设置</div>
+      </div>
+      {/* <div>{user.info.name}</div>
       <Button
         onClick={() => {
           updateDevice({ theme: 'ios' })
@@ -20,7 +22,7 @@ const MarkerIndex: NextPageWithLayout = () => {
           updateDevice({ theme: 'material' })
         }}>
         更新主题material
-      </Button>
+      </Button> */}
     </div>
   )
 }
