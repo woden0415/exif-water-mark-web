@@ -1,4 +1,6 @@
+import WaterFall from '@/components/waterfall'
 import { useStoreActions, useStoreState } from '@/store/index.hook'
+import { ProductItem } from '@/types'
 import { Block, Tabbar, TabbarLink } from 'konsta/react'
 import { useState } from 'react'
 import { NextPageWithLayout } from '../_app'
@@ -7,10 +9,10 @@ const MarkerIndex: NextPageWithLayout = () => {
   const user = useStoreState(state => state.user)
   const updateDevice = useStoreActions(action => action.device.updateDevice)
   const [activeTab, setActiveTab] = useState<'tab-1' | 'tab-2'>('tab-1')
-  const waterMarkerList = [
-    { imgUrl: '', name: 'marker1' },
-    { imgUrl: '', name: 'marker2' },
-    { imgUrl: '', name: 'marker3' },
+  const waterMarkerList: ProductItem[] = [
+    { url: '', name: 'marker1', uid: '12' },
+    { url: '', name: 'marker2', uid: '13' },
+    { url: '', name: 'marker3', uid: '14' },
   ]
   return (
     <div className="block h-screen w-screen">
@@ -32,7 +34,7 @@ const MarkerIndex: NextPageWithLayout = () => {
       </Tabbar>
       {activeTab === 'tab-1' ? (
         <Block>
-          <div>水印模板</div>
+          <WaterFall type="list" list={waterMarkerList} />
         </Block>
       ) : null}
       {activeTab === 'tab-2' ? (
@@ -40,20 +42,6 @@ const MarkerIndex: NextPageWithLayout = () => {
           <div>我的模板</div>
         </Block>
       ) : null}
-
-      {/* <div>{user.info.name}</div>
-      <Button
-        onClick={() => {
-          updateDevice({ theme: 'ios' })
-        }}>
-        更新主题ios
-      </Button>
-      <Button
-        onClick={() => {
-          updateDevice({ theme: 'material' })
-        }}>
-        更新主题material
-      </Button> */}
     </div>
   )
 }
