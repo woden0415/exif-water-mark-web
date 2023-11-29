@@ -16,7 +16,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <StoreProvider store={store}>
       <KonstaApp theme="material">
-        <RouterProvider router={router} />
+        <RouterProvider router={ router } />
       </KonstaApp>
     </StoreProvider>
   </React.StrictMode>,

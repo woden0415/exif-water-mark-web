@@ -1,0 +1,6 @@
+export const tianGan = ['', '丙丁', '', '甲乙', '戊己', '庚辛', '', '壬癸', '']
+export const diZhi = ['', '巳午', '', '寅卯', '辰丑戌未', '申酉', '', '子亥', '']
+export const wuXing = ['', '火', '', '木', '土', '金', '', '水', '']
+export const baMen = ['杜', '景', '死', '伤', '', '惊', '生', '休', '开']
+export const baGua = ['巽', '离', '坤', '震', '', '兑', '艮', '坎', '乾']
+export const baGuaIndex = [4, 9, 2, 3, 5, 7, 8, 1, 6]

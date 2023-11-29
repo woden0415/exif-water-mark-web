@@ -8,6 +8,9 @@ const config: Config = konstaConfig({
   ],
   theme: {
     extend: {},
+    borderRadius: {
+      'half': '50%',
+    }
   },
   darkMode: 'media', // or 'class'
   plugins: [],
