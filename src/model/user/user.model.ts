@@ -1,5 +1,5 @@
-import { Injections } from '@/store/index.store'
 import { Action, Thunk, action, thunk } from 'easy-peasy'
+import { Injections } from '../../store/index.store'
 
 export interface User {
   uid?: string
