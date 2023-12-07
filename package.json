@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build-github": "tsc && vite build --base=https://woden0415.github.io/react_ws"
   },
   "dependencies": {
     "easy-peasy": "^6.0.2",
