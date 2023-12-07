@@ -1,8 +1,7 @@
 import { Block, BlockTitle, Button, List, ListItem, Navbar, NavbarBackLink, Page } from "konsta/react";
-import { PropsWithChildren } from "react";
 import BoxItem from "./component/box-item";
 
-export default function ArtOfBecomingInvisible({ children }: PropsWithChildren) { 
+export default function ArtOfBecomingInvisible() { 
   
   return (
     <Page>
