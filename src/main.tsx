@@ -1,23 +1,18 @@
+import { StoreProvider } from 'easy-peasy'
+import { App as KonstaApp } from 'konsta/react'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import { RouterProvider } from 'react-router-dom'
 import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { StoreProvider } from 'easy-peasy'
-import store from "./store/index.store.ts";
-import { App as KonstaApp } from 'konsta/react'
-import { router } from "./router/index.tsx";
-
+import { router } from './router/index.tsx'
+import store from './store/index.store.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <StoreProvider store={store}>
       <KonstaApp theme="material">
-        <RouterProvider router={ router } />
+        <RouterProvider router={router} />
       </KonstaApp>
     </StoreProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )

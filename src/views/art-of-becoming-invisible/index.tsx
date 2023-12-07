@@ -1,36 +1,71 @@
-import { Block, BlockTitle, Button, List, ListItem, Navbar, NavbarBackLink, Page } from "konsta/react";
-import BoxItem from "./component/box-item";
+import {
+  Block,
+  BlockTitle,
+  Button,
+  List,
+  ListItem,
+  Navbar,
+  NavbarBackLink,
+  Page,
+} from 'konsta/react'
+import BoxItem from './component/box-item'
 
-export default function ArtOfBecomingInvisible() { 
-  
+export default function ArtOfBecomingInvisible() {
   return (
     <Page>
       <Navbar
         title="奇门遁甲"
         subtitle="图形"
         left={<NavbarBackLink text="Back" onClick={() => history.back()} />}
-        right={<Button onClick={() => { alert('查看介绍')}}>介绍</Button>}
+        right={
+          <Button
+            onClick={() => {
+              alert('查看介绍')
+            }}>
+            介绍
+          </Button>
+        }
       />
       <BlockTitle>奇门遁甲八卦图</BlockTitle>
       <Block>
         <div className="grid grid-cols-3">
-          <div className="border-slate-950 border-t border-l"><BoxItem index={0}/></div>
-          <div className="border-slate-950 border-t border-l"><BoxItem index={1}/></div>
-          <div className="border-slate-950 border-t border-l border-r"><BoxItem index={2}/></div>
-          <div className="border-slate-950 border-t border-l"><BoxItem index={3}/></div>
-          <div className="border-slate-950 border-t border-l"><BoxItem index={4}/></div>
-          <div className="border-slate-950 border-t border-l border-r"><BoxItem index={5}/></div>
-          <div className="border-slate-950 border-t border-l border-b"><BoxItem index={6}/></div>
-          <div className="border-slate-950 border-t border-l border-b"><BoxItem index={7}/></div>
-          <div className="border-slate-950 border-t border-l border-r border-b"><BoxItem index={8}/></div>
+          <div className="border-l border-t border-slate-950">
+            <BoxItem index={0} />
+          </div>
+          <div className="border-l border-t border-slate-950">
+            <BoxItem index={1} />
+          </div>
+          <div className="border-l border-r border-t border-slate-950">
+            <BoxItem index={2} />
+          </div>
+          <div className="border-l border-t border-slate-950">
+            <BoxItem index={3} />
+          </div>
+          <div className="border-l border-t border-slate-950">
+            <BoxItem index={4} />
+          </div>
+          <div className="border-l border-r border-t border-slate-950">
+            <BoxItem index={5} />
+          </div>
+          <div className="border-b border-l border-t border-slate-950">
+            <BoxItem index={6} />
+          </div>
+          <div className="border-b border-l border-t border-slate-950">
+            <BoxItem index={7} />
+          </div>
+          <div className="border-b border-l border-r border-t border-slate-950">
+            <BoxItem index={8} />
+          </div>
         </div>
         <br />
       </Block>
       <hr />
-      <BlockTitle className="font-bold text-2xl">天地人神四盘</BlockTitle>
+      <BlockTitle className="text-2xl font-bold">天地人神四盘</BlockTitle>
       <BlockTitle>天盘</BlockTitle>
       <Block>
-        天盘是指天体运动对地球和 人的影响。这里所说的九大行星并非现代天文学观测到的实际星座，而是古人在天人感应观 中，凭经验和直感发现的与地球上九个方位和八卦有对应的九种天体运行能量的代称。
+        天盘是指天体运动对地球和
+        人的影响。这里所说的九大行星并非现代天文学观测到的实际星座，而是古人在天人感应观
+        中，凭经验和直感发现的与地球上九个方位和八卦有对应的九种天体运行能量的代称。
       </Block>
       <List strong outline inset>
         <ListItem title="1、天蓬星: 又名贪狼星，北坎一宫，五行属水。" />
@@ -47,18 +82,22 @@ export default function ArtOfBecomingInvisible() {
       <BlockTitle>地盘</BlockTitle>
       <Block>
         <div>
-          六甲将帅和三个奇兵，根据不同季节、不同日子 、不同时辰，在九宫八卦阵上排演的规律，即为地盘排演规律。
-          地盘五天一变(五天一阵式、 五天一元、五天一局)，共有阳遁九局、阴遁九局、十八种阵式。
+          六甲将帅和三个奇兵，根据不同季节、不同日子
+          、不同时辰，在九宫八卦阵上排演的规律，即为地盘排演规律。
+          地盘五天一变(五天一阵式、
+          五天一元、五天一局)，共有阳遁九局、阴遁九局、十八种阵式。
           在五天一局中，地盘上的阵 式、格局是不变的，即地盘是不动的。
         </div>
-        <div>
-          后天八卦顺序: 坎坤震巽乾兑艮离
-        </div>
+        <div>后天八卦顺序: 坎坤震巽乾兑艮离</div>
       </Block>
 
       <BlockTitle>人盘</BlockTitle>
       <Block>
-        <div>人盘又称门盘，根据空间不同方位对人体生理 及人类生产、生活、行军打仗等活动利弊影响的不同特点进行设置，共设八盘，与八卦、八 方相对应。 </div>
+        <div>
+          人盘又称门盘，根据空间不同方位对人体生理
+          及人类生产、生活、行军打仗等活动利弊影响的不同特点进行设置，共设八盘，与八卦、八
+          方相对应。{' '}
+        </div>
       </Block>
       <List strong outline inset>
         <ListItem title="1、休门: 北坎一宫，天蓬星对应，五行属水。" />
@@ -71,14 +110,21 @@ export default function ArtOfBecomingInvisible() {
         <ListItem title="8、景门: 南离九宫，天英星对应，五行属火 。" />
       </List>
       <Block>
-        <div> 八门的运转规律是随时宫，即按阳遁顺行、阴遁逆行，随时辰地支和九宫顺序运转 ，也是一个时辰换一个宫位。 </div>
+        <div>
+          {' '}
+          八门的运转规律是随时宫，即按阳遁顺行、阴遁逆行，随时辰地支和九宫顺序运转
+          ，也是一个时辰换一个宫位。{' '}
+        </div>
         <div> 值使：即八门中的值班门吏，宫位与值符相同。 </div>
         <div> 八门顺序：休生伤杜景死惊开(环状) </div>
       </Block>
 
       <BlockTitle>神盘</BlockTitle>
       <Block>
-        <div>神盘又称顶盘， 在天、地、人相互感应中发现的八种影响人类生活吉凶祸福和举事成败得失的神秘力量，并命名为八种神煞</div>
+        <div>
+          神盘又称顶盘，
+          在天、地、人相互感应中发现的八种影响人类生活吉凶祸福和举事成败得失的神秘力量，并命名为八种神煞
+        </div>
       </Block>
       <List strong outline inset>
         <ListItem title="1、值符: 禀中央土，小值符，八神元首、九星领袖，所到之处、百 恶消散。" />
