@@ -1,11 +1,11 @@
+import { createHashRouter } from 'react-router-dom'
 import App from '../App'
 // import ArtOfBecomingInvisible from "@/views/art-of-becoming-invisible";
 // import WaterMarker from "@/views/water-marker";
-import { createBrowserRouter } from 'react-router-dom'
 import ArtOfBecomingInvisible from '../views/art-of-becoming-invisible'
 import WaterMarker from '../views/water-marker'
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: '/',
     element: <App />,
