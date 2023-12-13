@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "easy-peasy": "^6.0.2",
+    "exif": "^0.6.0",
+    "exif-js": "^2.3.0",
     "konsta": "^3.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,6 +22,8 @@
     "react-router-dom": "^6.20.0"
   },
   "devDependencies": {
+    "@types/exif": "^0.6.5",
+    "@types/node": "^20.10.4",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
