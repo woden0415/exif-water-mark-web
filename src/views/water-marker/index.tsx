@@ -7,11 +7,24 @@ import {
   Page,
 } from 'konsta/react'
 import { ChangeEvent, useRef, useState } from 'react'
-import { getImageInfo } from '../../utils'
+import { TypeCommonObject } from '../../@types'
+import { getImageInfo } from '../../utils/index'
 
 export default function WaterMarker() {
   const [base64, setBase64] = useState<string>()
-  const [exifInfo, setExifInfo] = useState<unknown>()
+  const [exifInfo, setExifInfo] = useState<TypeCommonObject>({
+    DateTime: '', // 拍照日期
+    Make: '', // 制造商
+    Model: '', // 品牌系列
+    ExposureProgram: '', // 曝光模式
+    ExposureTime: { denominator: 1, numerator: 1 }, // 曝光时间 numerator/denominator
+    FNumber: 0, // 光圈系数
+    Orientation: 0, // 方向
+    ResolutionUnit: 0, // 分辨率
+    ISOSpeedRatings: 0, // ISO
+    MaxApertureValue: 0, // 最大光圈
+    FocalLength: 0, // 焦段
+  })
 
   const pictureChangeHandle = async (event: ChangeEvent<HTMLInputElement>) => {
     const _selectFile = event.currentTarget.files?.[0]
@@ -19,10 +32,9 @@ export default function WaterMarker() {
     const reader1 = new FileReader()
     reader1.onload = (e: ProgressEvent<FileReader>) => {
       const imageArrayBuffer = e!.target!.result
-      console.log('imageArrayBuffer :>> ', imageArrayBuffer)
-      const _arrayBuffer = getImageInfo(imageArrayBuffer as ArrayBuffer)
-      console.log('_arrayBuffer :>> ', _arrayBuffer)
-      setExifInfo(_arrayBuffer!)
+      const _exifInfo = getImageInfo(imageArrayBuffer as ArrayBuffer)
+      console.log('_exifInfo :>> ', _exifInfo)
+      setExifInfo(_exifInfo!)
     }
     reader1.readAsArrayBuffer(_selectFile!)
 

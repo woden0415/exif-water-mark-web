@@ -1,5 +1,16 @@
+
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable prefer-const */
+/* eslint-disable no-var */
+/* eslint-disable no-useless-escape */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck 禁用整个文件的ts校验
 const debug = false
 
+/**
+ * 文档 https://zhuanlan.zhihu.com/p/366726838
+ */
 const EXIF = {}
 
 const ExifTags = (EXIF.Tags = {
@@ -111,6 +122,8 @@ const TiffTags = (EXIF.TiffTags = {
   0x0131: 'Software',
   0x013b: 'Artist',
   0x8298: 'Copyright',
+  0xa433: 'LensMake',
+  0xa434: 'LensModel',
 })
 
 const GPSTags = (EXIF.GPSTags = {
@@ -1113,16 +1126,15 @@ EXIF.pretty = function (img) {
 }
 
 EXIF.readFromBinaryFile = function (file) {
-  debugger
   return findEXIFinJPEG(file)
 }
 
 /**
  * 获取图片拍照方向
  * @param {ArrayBuffer} result
- * @returns {Number} number
+ * @returns {Number} any
  */
-export function getImageInfo(result: ArrayBuffer) {
+export function getImageInfo(result: ArrayBuffer): TypeCommonObject {
   const exif = EXIF.readFromBinaryFile(result)
   return exif
 }
