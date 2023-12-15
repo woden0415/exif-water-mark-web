@@ -1,4 +1,3 @@
-
 /* eslint-disable no-prototype-builtins */
 /* eslint-disable prefer-const */
 /* eslint-disable no-var */
@@ -86,6 +85,8 @@ const ExifTags = (EXIF.Tags = {
   // other tags
   0xa005: 'InteroperabilityIFDPointer',
   0xa420: 'ImageUniqueID', // Identifier assigned uniquely to each image
+  0xa433: 'LensMake',
+  0xa434: 'LensModel',
 })
 
 const TiffTags = (EXIF.TiffTags = {
@@ -455,11 +456,7 @@ function findEXIFinJPEG(file) {
     if (marker == 225) {
       if (debug) console.log('Found 0xFFE1 marker')
 
-      return readEXIFData(
-        dataView,
-        offset + 4,
-        dataView.getUint16(offset + 2) - 2
-      )
+      return readEXIFData(dataView, offset + 4)
 
       // offset += 2 + file.getShortAt(offset+2, true);
     } else {
