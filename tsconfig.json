@@ -24,6 +24,6 @@
     }
   },
   "include": ["src"],
-  "exclude": ["src/utils/index.ts"],
+  "exclude": ["src/utils/utilExif.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
